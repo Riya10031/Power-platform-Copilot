@@ -29,7 +29,7 @@ In this task, you'll create an approval flow using Power Automate to automate th
    
 1. Review the connected apps and services. If a connection hasn't been made, edit or fix it and then select **Create flow**.The Edit with Copilot designer opens with your flow along with a Copilot chat window on the right.
   
-1. Set up some parameters by selecting the **When a row is added,** modified or deleted trigger. A panel on the left side of the screen shows the trigger details, including an empty Table Name parameter that's required.
+1. Set up some parameters by selecting the **When a row is added, modified or deleted** trigger. A panel on the left side of the screen shows the trigger details, including an empty Table Name parameter that's required.
 
 1. From the **Change type** dropdown menu select **Added (1)**. From the Table Name dropdown menu, search for and select **Real Estate Showings (2)**.
 

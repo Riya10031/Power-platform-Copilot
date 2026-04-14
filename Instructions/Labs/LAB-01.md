@@ -17,7 +17,11 @@ In this lab, you will complete the following tasks:
 
  In this task, you'll create and configure a new Power Platform environment to support app development and deployment. You'll set up essential details and adjust settings to meet your organizational needs.
  
-1. In the new browser tab, navigate to the **Power Platform admin center** by visiting `https://aka.ms/ppac`.
+1. Open a new browser tab and navigate to the Power Platform admin center by copying and pasting the following link:
+
+   ```
+   https://aka.ms/ppac
+   ```
 
 2. On **Sign into Microsoft Azure** tab you will see login screen, in that enter following email/username and then click on **Next**. 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
@@ -27,54 +31,34 @@ In this lab, you will complete the following tasks:
 3. Now enter the following password and click on **Sign in**.
    * Password: <inject key="AzureAdUserPassword"></inject>
    
-      ![screenshot of the prompt ](../Media/image8.png)
+      ![screenshot of the prompt ](../Media/image8.png) 
 
-   * Select **Next** on the **Action Required** prompt, and follow the below steps:
+4. In the site navigation, click on **Manage (1)**, click on **Environments (2)**, and then click **+ New (3)** on the toolbar.
 
-      1. On the **"Keep your account secure"** page, select **Next** twice.
-
-      1. **Note:** If you don’t have the Microsoft Authenticator app installed on your mobile device:
-
-         - Open **Google Play Store** (Android) or **App Store** (iOS).
-         - Search for **Microsoft Authenticator** and tap **Install**.
-         - Open the **Microsoft Authenticator** app, select **Add account**, then choose **Work or school account**.
-
-      1. A **QR code** will be displayed on your computer screen.
-
-      1. In the Authenticator app, select **Scan a QR code** and scan the code displayed on your screen.
-
-      1. After scanning, click **Next** to proceed.
-
-      1. On your phone, enter the number shown on your computer screen in the Authenticator app and select **Next**.
-            
-      1. If prompted to stay signed in, you can click "No."
-      
-      1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Maybe Later" to skip the tour.
-
-      >**Note**: Close the welcome tour prompt. 
-
-4. In the site navigation, click on **Environments**, then click **+ New** on the toolbar.
-
-   ![screenshot of the prompt ](../Media/env-(1).png)
+   ![screenshot of the prompt ](../Media/img-01-05.png) 
 
 5. Create a new Environment with the following settings:
 
-   - **Name**: **Copilot (1)**
-   - **Group**: **None (2)**
-   - **Region**: **United States - Default (3)**
-   - **Type**: **Sandbox (4)**
+   - **Type**: **Sandbox (1)**
+   - **Region**: **United States - Default (2)**
+   - **Name**: **Copilot (3)**
+   - Expand **Change default settings (4)**
    - **Add a Dataverse data store?**: **Yes (5)**
-   - Keep all other settings unchanged, Click on **Next (6)**. 
-  
-      ![screenshot of the prompt ](../Media/copilot-final-1-1-1.jpg)  
+   - Keep all other settings unchanged, Click on **Next (6)**
+   
+      ![screenshot of the prompt ](../Media/img-01-06.png)
+
+      ![screenshot of the prompt ](../Media/img-01-07.png)  
  
 6. On the **Add Dataverse** tab, under **Security Group**, click the **+ Select** button. Then, under **Open Access**, choose **None (1)** and click **Done (2)**.
 
-   ![screenshot of the prompt ](../Media/select-2.jpg)
+   ![screenshot of the prompt ](../Media/img-01-08.png)
+
+   ![screenshot of the prompt ](../Media/img-01-09.png)
 
 7. Select **Save (2)**, on the **Add Dataverse** prompt.
 
-   ![screenshot of the prompt ](../Media/non-1.png)
+   ![screenshot of the prompt ](../Media/img-01-10.png)
  
 8. In the list of environments, your **Copilot** environment should now show as **Preparing**.
 
@@ -98,7 +82,7 @@ In this task, you'll use Power Apps Copilot to quickly create a canvas app, incl
 
 1. On the **Power Apps** portal, from the left navigation menu, select **Apps (1)**. Now, inside the Apps pane, select **Start with data (2)** option.
 
-   ![screenshot of the prompt ](../Media/powerapps(1).png)
+   ![screenshot of the prompt ](../Media/img-01-11.png)
 
 1. On the **Start with data** page, Enter the following prompt to search for an AI-generated table **build an app to manage real estate showings (1)** , Select the **Send (2)** button.
 
