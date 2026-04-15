@@ -8,35 +8,40 @@ In this exercise, you'll build a basic Power Automate flow using Microsoft Copil
 
 In this lab, you will complete the following tasks:
 
-- Task-01 : Create a new topic.
+- Task 01 : Create a new topic.
 - Task 02 : Create your Power Automate flow.
 - Task 03 : Connect a Power Automate flow with Microsoft Copilot Studio.
 
 
-### Task-01: Create a new topic.
+### Task 01: Create a new topic
 
 In this task, you'll create a new topic in Power Automate to help organize and manage your flows. You’ll navigate to the Topics section, set up a descriptive name for the topic, and categorize relevant flows under it, enhancing workflow management and organization.
 
-1. Open a new tab and go to **[Microsoft Copilot Studio](https://copilotstudio.microsoft.com/)**. On the **Welcome to Microsoft Copilot Studio** page, select **United States** under **Choose your country/region**, then click **Start free trial**.
+1. Open a new tab, copy and paste the link below to navigate to **Microsoft Copilot Studio**. On the **Welcome to Microsoft Copilot Studio** page, select **United States** under **Choose your country/region**, and then click **Start free trial**.
+
+   ```
+   https://copilotstudio.microsoft.com/
+   ```
 
 1. Select the **Copilot** Environment which you created in the previous lab.
 
    ![screenshot of the prompt ](../Media/copilot-env.png)
 
-3. To create a new agent click on **New agent** then click on **Skip to Configure**.
+1. To create a new agent click on **Create an agent** then click on **Skip to Configure**.
 
-   ![screenshot of the prompt ](../Media/L3T1S3.png)
-4. Enter the name as **Check Weather (1)** and then select **Create (2)**.
+   ![screenshot of the prompt ](../Media/img-01-52.png)
+
+1. On the **Agent** page, select **Edit**, and enter the name as **Check Weather (1)** and then select **Save (2)**.
    
-   ![screenshot of the prompt ](../Media/L3T1S3-1.png)
+   ![screenshot of the prompt ](../Media/img-01-53.png)
 	
-5. Select the **Topics (1)**. Click on **+ Add a topic (2)** and then choose an option **From blank (3)**. 
+1. Select the **Topics (1)**. Click on **+ Add a topic (2)** and then choose an option **From blank (3)**. 
 
-   ![screenshot of the prompt ](../Media/L3T1S4.png)
+   ![screenshot of the prompt ](../Media/img-01-54.png)
 
-6. Go to **Details (1)** options to Enter **Check Weather (2)** as the name of your topic. Click on **Save (3)**.
+1. Go to **Details (1)** options to Enter **Check Weather (2)** as the name of your topic. Click on **Save (3)**.
 
-   ![screenshot of the prompt ](../Media/L3T1S4-1.png)
+   ![screenshot of the prompt ](../Media/img-01-55.png)
 
 7. Click on **Edit (1)** within Phrases to open a pane to the right of the screen where you can enter simple trigger phrases, such as **What is the weather**, **What is the temperature today**, and **How hot it is (3)** until you have at least five trigger phrases. 
 
@@ -54,9 +59,9 @@ In this task, you'll create a new topic in Power Automate to help organize and m
 
 10. Within the top right corner of the screen, select the **Save** button to ensure that your work is saved.
 
- ## Task 02: Create your Power Automate flow.
+## Task 02: Create your Power Automate flow.
 
- In this task, you'll create a Power Automate flow to automate a specific process. You'll start by defining a trigger to initiate the flow, then set up actions to execute tasks based on the trigger. The goal is to streamline and automate repetitive processes, improving efficiency and productivity. 
+In this task, you'll create a Power Automate flow to automate a specific process. You'll start by defining a trigger to initiate the flow, then set up actions to execute tasks based on the trigger. The goal is to streamline and automate repetitive processes, improving efficiency and productivity. 
 
 1. Select the **Add node** button below the question node to add a new node to the topic. Select **Add an action > New Power Automate flow**. Power Automate opens in a new browser window.
 
@@ -90,10 +95,9 @@ In this task, you'll create a new topic in Power Automate to help organize and m
 
 10. Select the **Respond to Copliot** node at the end of the flow, then select **Add an output > Number**. Place your cursor in the **Enter a value to respond** text box. Press **/** to insert dynamic value. Select **Insert dynamic content** and then **Temperature**. Enter **Temperature** in the Title field.
 
-   
-   	![screenshot of the prompt ](../Media/L3T2S8.png)
+   ![screenshot of the prompt ](../Media/L3T2S8.png)
 
-   	![screenshot of the prompt ](../Media/L3T2S8-1.png)
+   ![screenshot of the prompt ](../Media/L3T2S8-1.png)
 
 11. The flow is almost complete, select the template title and rename it to `Get Temperature`.
 
