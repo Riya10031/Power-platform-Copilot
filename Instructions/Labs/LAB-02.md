@@ -32,6 +32,8 @@ In this task, you'll create an approval flow using Power Automate to automate th
 1. On the **Describe it to design it** prompt, Copilot provides the outline for a suggested flow that you can review. To accept the flow, select **Keep it and continue**
 
     ![screenshot of the prompt ](../Media/img-01-28.png)
+
+    >**Note:** It is not necessary that you will get the same output as shown in the screenshot; Copilot may provide a different response. Therefore, modify the prompt based on the given image to achieve a similar output.
    
 1. Review the connected apps and services. If a connection hasn't been made, edit or fix it and then select **Create flow**.The Edit with Copilot designer opens with your flow along with a Copilot chat window on the right.
 
@@ -39,9 +41,9 @@ In this task, you'll create an approval flow using Power Automate to automate th
   
 1. Set up some parameters by selecting the **When a row is added, modified or deleted** trigger. A panel on the left side of the screen shows the trigger details, including an empty Table Name parameter that's required.
 
-1. From the **Change type** dropdown menu select **Added (1)**. From the Table Name dropdown menu, search for and select **RealEstateShowings (2)**.
+1. From the **Change type** dropdown menu select **Added (1)**. From the Table Name dropdown menu, search for and select **RealEstateShowings (2)**. On the **Scope** select **Organization (3)**, and remove the **Update (4)** parameter.
 
-   ![screenshot of the prompt ](../Media/img-01-30.png)
+   ![screenshot of the prompt ](../Media/img-01-56.png)
 
 1. Select the **Start and wait for an approval action**. Notice that the Approval Type parameter is missing.
 
@@ -66,14 +68,12 @@ In this task, you'll create an approval flow using Power Automate to automate th
     Property:
     Client:
     Client Email:
-    Date:
-    Time:
     ```
-      ![screenshot of the prompt ](../Media/02/power-automate-copilot-details-parameter.png)
+      ![screenshot of the prompt ](../Media/img-01-58.png)
 
-1. Place your curser next to Property: in the Details parameter and then select the lightning icon to open the Dynamic content pane.
+1. Place your curser next to **Property: (1)** in the Details parameter and then select the lightning icon to open the **Dynamic content (2)** pane.
 
-    ![screenshot of the prompt ](../Media/02/power-automate-copilot-dynamic-content-icon.png)
+    ![screenshot of the prompt ](../Media/img-01-59.png)
 
 1. In the Dynamic content pane, select See More to expand the list of available dynamic content.
 
@@ -85,19 +85,17 @@ In this task, you'll create an approval flow using Power Automate to automate th
 
 1. The **Client Address** dynamic content field is now added to the Details parameter.
 
-    ![screenshot of the prompt ](../Media/img-01-36.png)
+    ![screenshot of the prompt ](../Media/img-01-60.png)
 
-1. Complete the same steps for the **Client Address, Client (Client Full name) , Client Email , Date** fields, When you're done with the rest of the fields, the values should resemble the following image.
+1. Complete the same steps for the **Client Address, Client (Client Full name) , Client Email** fields, When you're done with the rest of the fields, the values should resemble the following image.
 
-    ![screenshot of the prompt ](../Media/img-01-37.png)
-
-    >**Note:** Remove the time if it is not required.
+    ![screenshot of the prompt ](../Media/img-01-57.png)
 
 1. With the Details parameter completed, you can collapse the **Start and wait for an approval action** by selecting the double arrow icon.
 
     ![screenshot of the prompt ](../Media/copilot-start-wait-approval-collapsed-1.png)
 
-1. Select the **Condition** action. Select **Outcome**, select **is equal to** and then enter **Approve**..
+1. Select the **Condition** action. Select **Outcome**, select **is equal to** and then enter **Approve**.
 
     ![screenshot of the prompt ](../Media/img-01-43.png)
 
@@ -121,17 +119,17 @@ In this task, you'll create an approval flow using Power Automate to automate th
 
     >**Note:** When a showing is approved, the Status field in the RealEstateShowings table is updated to Active.
 
-1. Collapse the **Update a row** action and then select the **Update a row 2** action under the **False branch** of the condition.
+1. Collapse the **Upsert a row** action and then select the **Upsert a row 2** action under the **False branch** of the condition.
 
 1. From the Table Name dropdown menu, search for and select **RealEstateShowings (1)**, select the **Row ID** field and then select the **RealEstateShowings (2)** unique identifier field from the Dynamic content pane.
 
     ![screenshot of the prompt ](../Media/img-01-42.png)
 
-1. For the **Row Item** field select the **Approval ID** unique identifier field from the Dynamic content pane.
+1. Select **Show all** under **Advanced parameters**. Select **Inactive** from the **Status** dropdown menu.
 
-1. Collapse the **Update a row 2** action.
+1. Collapse the **Upsert a row 2** action.
 
-## Task-02: Update the flow ,send an email and Run the App.
+## Task-02: Update the flow, send an email and Run the App.
 
 In this task, you'll update the approval flow to refine its settings and configure it to send an email notification. After making these updates, you'll run the app to test and ensure the flow and email notifications work correctly.
 
@@ -139,7 +137,7 @@ In this task, you'll update the approval flow to refine its settings and configu
 
    ![screenshot of the prompt ](../Media/img-01-44.png)
 
-1. Select the **Send an email (V2)** action under the **True branch** of the condition.
+1. Select the **Send an email (V2) (3)** action under the **True branch** of the condition.
 
 1. On the **Create connection** page, select **Sign in** for creating a new connection.
 
@@ -167,27 +165,19 @@ In this task, you'll update the approval flow to refine its settings and configu
     Client:
 
     Client Email:
+    ```
 
-    Date:
+    >**Note**: Add the **Client Address, Client Full name, Client Email** fields from the Dynamic content pane to the appropriate lines in the Body text.
 
-    Time:
-   ```
-
-    >**Note** : Add the **Client Address, Client Full name , Client Email,  Date, and Time** fields from the Dynamic content pane to the appropriate lines in the Body text.
-
-    ![screenshot of the prompt ](../Media/img-01-48.png)
+    ![screenshot of the prompt ](../Media/img-01-61.png)
 
 1. Add the **Response summary** from the Dynamic content pane to the end of the Body text.
 
-   ![screenshot of the prompt ](../Media/img-01-49.png)
+   ![screenshot of the prompt ](../Media/img-01-62.png)
 
 1. Collapse the **Send an email (V2)** action.
 
-1. Select the **Send an email (V2) 1** action under the **False branch** of the condition.
-
-1. Verify that it already have the existing connection. Select the connection.
-
-    ![screenshot of the prompt ](../Media/img-01-50.png)    
+1. Select the **Send an email (V2) 1** action under the **False branch** of the condition.    
 
 1. In the **To** field, select **Client Email** from the Dynamic Content pane under **Where a row is added, modified, or deleted**.
 
@@ -205,16 +195,13 @@ In this task, you'll update the approval flow to refine its settings and configu
     Client:
 
     Client Email:
-
-    Date:
-
-    Time:
     ```
-    >**Note**: Add the **Client Address, Client Full Name, Client Email, Date, and Time** fields from the Dynamic content pane to the appropriate lines in the Body text.
+
+    >**Note**: Add the **Client Address, Client Full Name, Client Email** fields from the Dynamic content pane to the appropriate lines in the Body text.
 
 1. Add the **Response summary** field from the Dynamic content pane to the end of the Body text, Collapse the Send an email action.
 
-    ![screenshot of the prompt ](../Media/img-01-51.png)
+    ![screenshot of the prompt ](../Media/img-01-62.png)
 
 1. Rename the flow to **Request Approval for Real Estate Showing** by selecting the request approval when a Dataverse record is created text in the upper-left corner of the screen.
 
@@ -224,32 +211,41 @@ In this task, you'll update the approval flow to refine its settings and configu
 
     ![](../Media/02/power-automate-copilot-save.png)
 
-1. Test the flow by selecting the Test button in the upper-right corner of the screen. Select **Manually** and then select **Test**.
+1. Test the flow by selecting the Test button in the upper-right corner of the screen. Select **Manually (1)** and then select **Publish & Test (2)**.
 
-    ![screenshot of the prompt ](../Media/02/power-automate-copilot-test.png)
+    ![screenshot of the prompt ](../Media/img-01-63.png)
 
-1. To submit a **real estate showing request**, go to the Real Estate Showings app in Power Apps.
+1. To submit a **Real Estate Showing request**, navigate back to the Real Estate Showings app in Power Apps.
 
-1. Run the app and then select **+New to create** a new showing request.Fill in the fields with the following information:
+1. Run the app and then select **+ New** to create a new showing request.Fill in the fields with the following information, select the **tick mark** in the upper-right corner to **Save** the details:
 
     - Agent Name - < random name >
     - Client Full Name - < Your name >
-    - Client Email - < Your email > (the email that you're using for this lab)
+    - Client Email - <inject key="AzureAdUserEmail"></inject>
+    - Is Confirmed - True
+    - Client Address - 210 Pine Road, Portland, OR 97204
     - Date - < Any future date >
     - Time - < Any future time >
     - Status - Pending
-    - Address - 210 Pine Road, Portland, OR 97204
+    - Property Address - 789 Chestnut St 
+
+    ![screenshot of the prompt ](../Media/img-01-64.png)
+
+    ![screenshot of the prompt ](../Media/img-01-65.png)
+
+    ![screenshot of the prompt ](../Media/img-01-66.png)
     
-    >**Note:** This address is one of the addresses from the Microsoft Excel file in Module 1; it's the same file that you uploaded and turned into the Real Estate Properties table. Usually, you would have a lookup field to the Real Estate Properties table, but not for this lab to keep it simple.Select the check mark in the upper-right corner of the screen.
+    >**Note:** This address is one of the addresses from the Microsoft Excel file in Module 1. it's the same file that you uploaded and turned into the Real Estate Properties table. Usually, you would have a lookup field to the Real Estate Properties table, but not for this lab to keep it simple.Select the check mark in the upper-right corner of the screen.
 
-1. Select the X in the upper-right corner to close out of the app.The flow runs and sends an approval email to the email address that you provided in the flow that you built.
-Sign in to the email account that you're using for this lab and then wait for the email to arrive.
+1. Select the **X** in the upper-right corner to close the app. The flow runs and sends an approval email to the email address that you provided in the flow that you built. 
 
-    >**Note**: If the flow doesn't run immediately, make sure that you wait for it. It might take up to 10 minutes for the flow to be triggered, especially on the first try.
+1. Open a new tab, and sign in to the **Outlook** using the following link with the credentials, **Email/Username:** <inject key="AzureAdUserEmail"></inject> and **Password:** <inject key="AzureAdUserPassword"></inject> and then wait for the email to arrive. The approval should resemble the following image.
 
-    - The approval should resemble the following image.
+    ```
+    https://outlook.office.com/
+    ```
 
-        ![screenshot of the prompt ](../Media/02/power-automate-copilot-approval-email.png)
+    ![screenshot of the prompt ](../Media/img-01-67.png)
 
 1. Select **Approve**. Add a comment and then select **Submit**.
 
@@ -261,7 +257,7 @@ Sign in to the email account that you're using for this lab and then wait for th
 
 1. Check the flow and notice that the flow is now marked as **Succeeded** in the **run history**.
 
-    ![screenshot of the prompt ](../Media/02/power-automate-copilot-flow-succeeded-1.png)
+    ![screenshot of the prompt ](../Media/img-01-68.png)
 
 ## Summary
 
@@ -270,3 +266,5 @@ In this lab, you have accomplished the following:
 - You have created an approval flow and updated it to send an email notification.
 
 - You have run the app to verify that the approval process and email notifications work correctly.
+
+### Congratulations! you have successfully completed this lab, please click on **Next** to continue with the next lab.
